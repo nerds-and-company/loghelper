@@ -1,0 +1,17 @@
+{
+    "name": "nerds-and-company/loghelper",
+    "description": "Log Helper Plugin for Craft CMS",
+    "authors": [
+        {
+            "name": "Bob Olde Hampsink",
+            "email": "b.oldehampsink@nerds.company",
+            "homepage": "https://www.nerds.company",
+            "role": "Developer"
+        }
+    ],
+    "license": "MIT",
+    "type": "craft-plugin",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
