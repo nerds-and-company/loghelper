@@ -31,7 +31,7 @@ class LogHelperPlugin extends BasePlugin
      */
     public function getVersion()
     {
-        return '1.0.0';
+        return '2.0.0';
     }
 
     /**
@@ -59,10 +59,26 @@ class LogHelperPlugin extends BasePlugin
      */
     public function init()
     {
-        // Import log route
-        require_once __DIR__.'/logging/LogHelper_StdErrLogRoute.php';
+        // Disable web logging?
+        if (!craft()->config->get('useWebLog')) {
+            craft()->log->removeRoute('WebLogRoute');
+        }
 
-        // Add route
-        craft()->log->addRoute('Craft\LogHelper_StdErrLogRoute');
+        // Disable file logging?
+        if (!craft()->config->get('useFileLog')) {
+            craft()->log->removeRoute('FileLogRoute');
+        }
+
+        // Use STDERR logging?
+        if (craft()->config->get('useStdErrLog')) {
+            require_once __DIR__.'/logging/LogHelper_StdErrLogRoute.php';
+            craft()->log->addRoute('Craft\LogHelper_StdErrLogRoute');
+        }
+
+        // Use SysLog logging?
+        if (craft()->config->get('useSysLog')) {
+            require_once __DIR__.'/logging/LogHelper_SysLogRoute.php';
+            craft()->log->addRoute('Craft\LogHelper_SysLogRoute');
+        }
     }
 }
