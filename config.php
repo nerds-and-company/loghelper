@@ -13,6 +13,7 @@
 return array(
     'useWebLog' => true,
     'useFileLog' => true,
+    'useProfileLog' => true,
     'useStdErrLog' => false,
     'useSysLog' => false,
 );

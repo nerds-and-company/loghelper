@@ -69,6 +69,11 @@ class LogHelperPlugin extends BasePlugin
             craft()->log->removeRoute('FileLogRoute');
         }
 
+        // Disable profile logging?
+        if (!craft()->config->get('useProfileLog')) {
+            craft()->log->removeRoute('ProfileLogRoute');
+        }
+
         // Use STDERR logging?
         if (craft()->config->get('useStdErrLog')) {
             require_once __DIR__.'/logging/LogHelper_StdErrLogRoute.php';
