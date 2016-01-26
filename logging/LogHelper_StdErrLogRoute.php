@@ -24,7 +24,7 @@ class LogHelper_StdErrLogRoute extends \CLogRoute
         $strErr = fopen('php://stderr', 'w');
 
         foreach ($logs as $log) {
-            fwrite($strErr, $log[0]);
+            fwrite($strErr, $log[0]."\n");
         }
 
         fclose($strErr);
