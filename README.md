@@ -19,5 +19,10 @@ Screenshots
 
 Changelog
 =================
+###2.0.0###
+- Adds support for syslog logging, which is the default for Papertrail (non-Heroku)
+- Adds the ability to remove web, file and profile logging
+- Improves readability of the logs by appending newlines
+
 ###1.0.0###
 - Initial release
