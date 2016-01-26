@@ -12,7 +12,7 @@ namespace Craft;
  *
  * @link      https://www.nerds.company
  */
-class LogHelper_StdErrLogRoute extends \CLogRoute
+class LogHelper_SysLogRoute extends \CLogRoute
 {
     /**
      * Process logs.
@@ -21,12 +21,8 @@ class LogHelper_StdErrLogRoute extends \CLogRoute
      */
     public function processLogs($logs)
     {
-        $strErr = fopen('php://stderr', 'w');
-
         foreach ($logs as $log) {
-            fwrite($strErr, $log[0]."\n");
+            syslog(LOG_DEBUG, $log[0]."\n");
         }
-
-        fclose($strErr);
     }
 }
