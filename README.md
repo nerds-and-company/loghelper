@@ -49,10 +49,11 @@ The following settings are available:
 
 #### useFileLog
 
-|-|-|
-| Accepts | `true` or `false` |
-| Default | `true` |
-| Since   | v2.0.0 |
+<table>
+<tr><td>Accepts</td><td><code>true</code> or <code>false</code></td></tr>
+<tr><td>Default</td><td><code>true</code></td></tr>
+<tr><td>Since</td><td>v2.0.0</td></tr>
+</table>
 
 Determines whether logs should be written to file or not.
 This allows for disabling Craft's default behaviour.
@@ -61,10 +62,11 @@ This allows for disabling Craft's default behaviour.
 
 #### useProfileLog
 
-|-|-|
-| Accepts | `true` or `false` |
-| Default | `true` |
-| Since   | v2.0.0 |
+<table>
+<tr><td>Accepts</td><td><code>true</code> or <code>false</code></td></tr>
+<tr><td>Default</td><td><code>true</code></td></tr>
+<tr><td>Since</td><td>v2.0.0</td></tr>
+</table>
 
 Determines whether or not to displays profiling results in the browser's console window.
 This allows for disabling Craft's default behaviour.
@@ -73,10 +75,11 @@ This allows for disabling Craft's default behaviour.
 
 #### useStdErrLog
 
-|-|-|
-| Accepts | `true` or `false` |
-| Default | `false` |
-| Since   | v2.0.0 |
+<table>
+<tr><td>Accepts</td><td><code>true</code> or <code>false</code></td></tr>
+<tr><td>Default</td><td><code>false</code></td></tr>
+<tr><td>Since</td><td>v2.0.0</td></tr>
+</table>
 
 Determines whether logs should be written to STDERR (shell error output stream) or not.
 Enabling this allows for viewing Craft logs on Heroku (or in tools that persist Heroku logs, like Papertrail). 
@@ -85,10 +88,11 @@ Enabling this allows for viewing Craft logs on Heroku (or in tools that persist 
 
 #### useSysLog
 
-|-|-|
-| Accepts | `true` or `false` |
-| Default | `false` |
-| Since   | v2.0.0 |
+<table>
+<tr><td>Accepts</td><td><code>true</code> or <code>false</code></td></tr>
+<tr><td>Default</td><td><code>false</code></td></tr>
+<tr><td>Since</td><td>v2.0.0</td></tr>
+</table>
 
 Determines whether logs should be written to [the system logs](https://en.wikipedia.org/wiki/Syslog) or not.
 Enabling this allows tools that read from the system logs (like Papertrail when not on Heroku) to persist Craft logs.
@@ -97,10 +101,11 @@ Enabling this allows tools that read from the system logs (like Papertrail when 
 
 #### useWebLog
 
-|-|-|
-| Accepts | `true` or `false` |
-| Default | `true` |
-| Since   | v2.0.0 |
+<table>
+<tr><td>Accepts</td><td><code>true</code> or <code>false</code></td></tr>
+<tr><td>Default</td><td><code>true</code></td></tr>
+<tr><td>Since</td><td>v2.0.0</td></tr>
+</table>
 
 Determines whether or not to displays log content in the browser's console window.
 This allows for disabling Craft's default behaviour.
