@@ -41,7 +41,7 @@ The plugin's folder **must** be named "loghelper"
 ## Usage
 
 This plugin offers different types of behaviour that can be configured
-by editing the `craft/config/general.php` config file.
+by editing/adding the `craft/config/logHelper.php` config file.
 
 ### Configuration
 
