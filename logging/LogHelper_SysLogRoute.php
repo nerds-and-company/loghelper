@@ -22,7 +22,7 @@ class LogHelper_SysLogRoute extends \CLogRoute
     public function processLogs($logs)
     {
         foreach ($logs as $log) {
-            syslog(LOG_DEBUG, $log[0]."\n");
+            syslog(LOG_DEBUG, LogHelperPlugin::formatMessage($log));
         }
     }
 }
