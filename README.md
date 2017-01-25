@@ -132,6 +132,10 @@ This plugin has been licensed under the MIT License (MIT). Please see [License F
 
 ##  Changelog
 
+### 2.0.3
+
+- Better log processing
+
 ### 2.0.2
 
 - Fixed bug with reading default config values
