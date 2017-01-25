@@ -1,6 +1,7 @@
 <?php
 
 namespace Craft;
+require_once __DIR__.'/LogHelper_BaseLogRoute.php';
 
 /**
  * Log Helper Plugin.
@@ -12,7 +13,7 @@ namespace Craft;
  *
  * @link      https://www.nerds.company
  */
-class LogHelper_SysLogRoute extends \CLogRoute
+class LogHelper_SysLogRoute extends LogHelper_BaseLogRoute
 {
     /**
      * Process logs.
@@ -22,7 +23,7 @@ class LogHelper_SysLogRoute extends \CLogRoute
     public function processLogs($logs)
     {
         foreach ($logs as $log) {
-            syslog(LOG_DEBUG, $log[0]."\n");
+            syslog(LOG_DEBUG, $this->formatLogMessage($log));
         }
     }
 }
