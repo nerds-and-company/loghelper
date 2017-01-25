@@ -86,4 +86,27 @@ class LogHelperPlugin extends BasePlugin
             craft()->log->addRoute('Craft\LogHelper_SysLogRoute');
         }
     }
+
+	/**
+	 * Formats a log message given different fields.
+	 *
+	 * @param array $log The log array.
+	 *
+	 * @return string The formatted message.
+	 */
+	public function formatMessage(array $log)
+	{
+		$message = LoggingHelper::redact($log[0]);
+		$level = $log[1];
+		$category = $log[2];
+		$force = (isset($log[4]) && $log[4] == true) ? 'Forced' : false;
+		$plugin = isset($log[5]) ? StringHelper::toLowerCase($log[5]) : 'craft';
+
+		$labels = array_filter(array($plugin, $level, $category, $force));
+		$labels = array_map(function($item) {
+			return "[$item]";
+		}, $labels);
+
+		return implode(' ', $labels) . ' ' . $message . "\n";
+	}
 }
