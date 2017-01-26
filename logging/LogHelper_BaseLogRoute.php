@@ -42,7 +42,7 @@ abstract class LogHelper_BaseLogRoute extends \CLogRoute
      */
     protected function processLogs($logs)
     {
-        $logs = array();
+        $processed = array();
 
         foreach ($logs as $log) {
             $message = LoggingHelper::redact($log[0]);
@@ -52,10 +52,10 @@ abstract class LogHelper_BaseLogRoute extends \CLogRoute
             $force = (isset($log[4]) && $log[4] == true) ? true : false;
             $plugin = isset($log[5]) ? StringHelper::toLowerCase($log[5]) : 'craft';
             
-            $logs[] = $this->formatLogMessageWithForce($message, $level, $category, $time, $force, $plugin);
+            $processed[] = $this->formatLogMessageWithForce($message, $level, $category, $time, $force, $plugin);
         }
         
-        return $logs;
+        return $processed;
     }
 
     /**
