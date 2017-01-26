@@ -22,7 +22,7 @@ class LogHelper_StdErrLogRoute extends LogHelper_BaseLogRoute
     protected function processLogs($logs)
     {
         $logs = parent::processLogs($logs);
-        
+
         $strErr = fopen('php://stderr', 'w');
 
         foreach ($logs as $log) {
