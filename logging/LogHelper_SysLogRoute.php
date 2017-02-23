@@ -12,17 +12,19 @@ namespace Craft;
  *
  * @link      https://www.nerds.company
  */
-class LogHelper_SysLogRoute extends \CLogRoute
+class LogHelper_SysLogRoute extends LogHelper_BaseLogRoute
 {
     /**
      * Process logs.
      *
      * @param array $logs
      */
-    public function processLogs($logs)
+    protected function processLogs($logs)
     {
+        $logs = parent::processLogs($logs);
+
         foreach ($logs as $log) {
-            syslog(LOG_DEBUG, $log[0]."\n");
+            syslog(LOG_DEBUG, $log."\n");
         }
     }
 }

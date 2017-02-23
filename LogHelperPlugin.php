@@ -76,12 +76,14 @@ class LogHelperPlugin extends BasePlugin
 
         // Use STDERR logging?
         if (craft()->config->get('useStdErrLog', 'logHelper')) {
+            require_once __DIR__.'/logging/LogHelper_BaseLogRoute.php';
             require_once __DIR__.'/logging/LogHelper_StdErrLogRoute.php';
             craft()->log->addRoute('Craft\LogHelper_StdErrLogRoute');
         }
 
         // Use SysLog logging?
         if (craft()->config->get('useSysLog', 'logHelper')) {
+            require_once __DIR__.'/logging/LogHelper_BaseLogRoute.php';
             require_once __DIR__.'/logging/LogHelper_SysLogRoute.php';
             craft()->log->addRoute('Craft\LogHelper_SysLogRoute');
         }
